@@ -8,7 +8,7 @@ const iinfluencersSchema = new schema({
   data: {},
   instagram: {},
   pricing: {},
-  iusername: { type: String, unique: true, sparse: true },
+  // iusername: { type: String, unique: true, sparse: true },
 });
 
 const iinfluencers = mongoose.model('iinfluencers',iinfluencersSchema);
