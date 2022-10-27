@@ -42,7 +42,7 @@ async function mainScript(start,len, limit) {
     let data = [];
     len=len/100
     console.log(len)
-    for (let i =start/100 ; i < len; i++) {
+    for (let i =0 ; i < len; i++) {
       let grinData = await Grins.find({}, { username: true })
         .skip(i * 100)
         .limit(limit); //.skip(skip)
@@ -80,7 +80,7 @@ async function mainScript(start,len, limit) {
     console.log(error);
   }
 }
-let response = mainScript(1100000,2000000, 100); // total maximum length , limit pr loop
+let response = mainScript(0,1000000, 100); // total maximum length , limit pr loop
 
 fs.writeFile(
   '../jsons/response' + '.json',
