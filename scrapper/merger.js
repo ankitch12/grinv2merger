@@ -80,7 +80,7 @@ async function mainScript(start,len, limit) {
     console.log(error);
   }
 }
-let response = mainScript(1000000,2000000, 100); // total maximum length , limit pr loop
+let response = mainScript(1100000,2000000, 100); // total maximum length , limit pr loop
 
 fs.writeFile(
   '../jsons/response' + '.json',

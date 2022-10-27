@@ -44,7 +44,7 @@ async function mainScript(start,len, limit) {
     console.log(len);
     for (let i = start/100; i < len; i++) {
       let grinData = await Grins.find({}, { username: true })
-        .skip(start,i * 100)
+        .skip(i * 100)
         .limit(limit); //.skip(skip)
       console.log(i * 100);
       let promices = [];
