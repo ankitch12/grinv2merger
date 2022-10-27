@@ -42,11 +42,11 @@ async function mainScript(start,len, limit) {
     let data = [];
     len=len/100
     console.log(len)
-    for (let i =0 ; i < len; i++) {
+    for (let i = start; i < len; i++) {
       let grinData = await Grins.find({}, { username: true })
         .skip(i * 100)
         .limit(limit); //.skip(skip)
-      console.log(start,i*100)
+      console.log(start, i * 100);
       let promices = [];
       grinData.forEach(async (profile) => {
         promices.push(
@@ -62,7 +62,7 @@ async function mainScript(start,len, limit) {
                 message: 'success',
               });
             } catch (error) {
-              console.log(profile.username+"failed"+error.message)
+              console.log(profile.username + 'failed' + error.message);
               resolve({
                 username: profile.username,
                 success: false,
