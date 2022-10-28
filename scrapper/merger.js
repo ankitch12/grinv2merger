@@ -47,7 +47,7 @@ async function mainScript(start,len, limit) {
       let grinData = await Grins.find({}, { username: true })
         .skip(i * limit)
         .limit(limit); //.skip(skip)
-      console.log(start, i * limit),len*limit;
+      console.log(start, i * limit, len * limit);
       let promices = [];
       grinData.forEach(async (profile) => {
         promices.push(
