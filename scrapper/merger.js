@@ -42,7 +42,7 @@ async function mainScript(start,len, limit) {
     let data = [];
     len=len/limit
     console.log(len)
-    for (let i = start; i < len; i++) {
+    for (let i = start / limit; i < len; i++) {
       let grinData = await Grins.find({}, { username: true })
         .skip(i * limit)
         .limit(limit); //.skip(skip)
