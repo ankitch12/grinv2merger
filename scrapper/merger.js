@@ -40,13 +40,14 @@ async function instaProfileMerger(username) {
 async function mainScript(start,len, limit) {
   try {
     let data = [];
-    len=len/limit
-    console.log(len)
-    for (let i = start / limit; i < len; i++) {
+    len= parseInt(len/limit)
+    start = parseInt(start/limit)
+    console.log(start,len)
+    for (let i = start; i < len; i++) {
       let grinData = await Grins.find({}, { username: true })
         .skip(i * limit)
         .limit(limit); //.skip(skip)
-      console.log(start, i * limit);
+      console.log(start, i * limit),len*limit;
       let promices = [];
       grinData.forEach(async (profile) => {
         promices.push(
@@ -80,7 +81,7 @@ async function mainScript(start,len, limit) {
     console.log(error);
   }
 }
-let response = mainScript(924300,3981000, 1000); // total maximum length , limit pr loop
+let response = mainScript(923000,3981000, 1000); // total maximum length , limit pr loop
 
 fs.writeFile(
   '../jsons/response' + '.json',
