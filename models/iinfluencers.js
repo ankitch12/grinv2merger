@@ -16,7 +16,6 @@ const iinfluencersSchema = new schema({
     media: [],
   },
   pricing: {},
-  // iusername: { type: String, unique: true, sparse: true },
 });
 
 const iinfluencers = mongoose.model('iinfluencers',iinfluencersSchema);
