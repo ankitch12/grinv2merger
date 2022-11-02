@@ -6,7 +6,15 @@ const iinfluencersSchema = new schema({
   about: {},
   brands: [],
   data: {},
-  instagram: {},
+  instagram: {
+    biography: String,
+    followers_count: Number,
+    id: String,
+    gender: String,
+    profile_picture_url: String,
+    username: { type: String, unique: true, sparse: true },
+    media: [],
+  },
   pricing: {},
   // iusername: { type: String, unique: true, sparse: true },
 });
